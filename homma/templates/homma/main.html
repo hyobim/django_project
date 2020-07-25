@@ -4,8 +4,12 @@
     <span style="">
         <span style="margin-right: 60px; "><a href="{% url 'findhomma'%}"> 홈마찾기</a> </span>
         <span style="margin-right: 60px; ">신청하기</span>
-        <span style="margin-right: 60px; "><a href="{% url 'create'%}"></a>로그인</span>
-        <span style="margin-right: 60px; "><a
-                href="{% url 'signup'%}"></a>회원가입</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="margin-right: 60px; "><a href="{% url 'signin'%}">로그인</a></span>
+        <span style="margin-right: 60px; ">
+            <a href="{% url 'signup'%}">회원가입</a></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            {% if user.is_authenticated %}
+    <span style="margin-right: 60px; "><a href="{% url 'myprofile'%}">내 프로필</a></span>
+    {% endif %}
     </span>
+    
 </div>

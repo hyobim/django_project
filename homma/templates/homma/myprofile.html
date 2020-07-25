@@ -1,0 +1,28 @@
+<h1>My Page</h1>
+    <form action="POST">
+        <label for="nickname">닉네임</label>
+        <p>{{user.nickname}}</p>
+        <br>
+        <label for="id">아이디</label>
+        <p>{{user.username}}</p>
+        <br>
+        <br>
+        <label for="info">이용자 정보</label>
+        <p class="flex items-center">
+            <input type="checkbox" name="1" >
+            <label for="1" >
+                홈마(보정자)</label> 
+            <input type="checkbox" name="2" >
+            <label for="2">보정 의뢰자</label>
+        </p>
+
+        <br>
+        <lable for="email">이메일</lable>
+        <p>{{user.email}}</p>
+        <br><br>
+        <label for="now">보정 의뢰 현황</label><br>
+        <textarea name="body" id="body" cols="30" rows="20"></textarea>
+        <br><br>
+        <a href="{%url 'main'%}">home</a>
+        
+    </form> 

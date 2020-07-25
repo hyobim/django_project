@@ -32,5 +32,6 @@ urlpatterns = [
     path('delete/<int:pk>', homma.views.delete, name='delete'),
     path('signin', homma.views.signin, name='signin'),
     path('signup', homma.views.signup, name='signup'),
+    path('myprofile', homma.views.myprofile, name='myprofile'),
     path('',include('django.contrib.auth.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -59,12 +59,14 @@ def signin(request):
         username = request.POST['username']
         password = request.POST['password']
         user = authenticate(username = username, password = password)
-
         if user is not None:
             login(request,user)
             return redirect('main')
         else:
             return HttpResponse("로그인 실패. 다시 시도해보세요")
+    else:
+        signin_form = SigninForm()
+        return render(request, 'homma/signin.html', {'signin_form': signin_form})
 
 def signup(request):
     if request.method == "POST":
@@ -80,3 +82,7 @@ def signup(request):
     else:
         form = UserForm()
         return render(request,'homma/signup.html',{'form':form})
+
+def myprofile(request):
+    user = request.user
+    return render(request,'homma/myprofile.html', {'user':user})
