@@ -27,7 +27,8 @@ def create(request):
         return render(request, 'homma/create.html', {'form': form})
 
 def findhomma(request):
-     return render(request, 'homma/findhomma.html')
+     posts=Post.objects
+     return render(request, 'homma/findhomma.html',{'posts':posts})
 
 def application(request):
      return render(request, 'homma/application.html')
