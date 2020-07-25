@@ -1,0 +1,37 @@
+{% block content %}
+<style>
+    @font-face {
+        font-family: 'JejuGothic';
+        src: url('https://likelion_2/JejuGothic.woff') format('woff');
+        font-weight:
+            normal;
+        font-style: normal;
+    }
+
+    .header {
+        width: 129px;
+        height: 22px;
+        font-family: 'JejuGothic';
+        font-size: 30px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.2;
+        letter-spacing: normal;
+        text-align: left;
+        color: #707070;
+    }
+</style>
+
+<div
+    style="width: 100vw; height: 50px; display: flex; align-items: center; justify-content: space-between; background-color: white;">
+    <img src="https://likelion_2/idol.png" width="100px" style="top: 50%;">
+    <span class="header">
+        <span style="margin-right: 60px; "><a href="{% url 'findhomma'%}"> 홈마찾기</a> </span>
+        <span style="margin-right: 60px; ">신청하기</span>
+        <span style="margin-right: 60px; "><a href="{% url 'create'%}"></a>로그인</span>
+        <span style="margin-right: 60px; "><a
+                href="{% url 'signup'%}"></a>회원가입</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </span>
+</div>
+{% endblock %}
