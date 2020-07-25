@@ -26,11 +26,20 @@ def create(request):
         form = PostForm()
         return render(request, 'homma/create.html', {'form': form})
 
+def application(request):
+    if request.method == "POST":
+        form = PostForm(request.POST, request.FILES)
+        if form.is_valid():
+            form = form.save(commit=False)
+            form.save()
+            return redirect('main')
+    else:
+        form = PostForm()
+        return render(request, 'homma/application.html', {'form': form})
+
 def findhomma(request):
      return render(request, 'homma/findhomma.html')
 
-def application(request):
-     return render(request, 'homma/application.html')
 
 def read(request):
     return redirect('main')

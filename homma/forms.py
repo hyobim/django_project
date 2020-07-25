@@ -4,8 +4,8 @@ from .models import Post, CustomUser
 
 class PostForm(forms.ModelForm):
     class Meta:
-        model = Post
-        fields = ['title', 'content','image']
+        model = Post  
+        fields = ['name', 'phone','email','style','image','content']
 
 class SigninForm(forms.ModelForm):
     class Meta:
