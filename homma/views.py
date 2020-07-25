@@ -80,3 +80,4 @@ def signup(request):
     else:
         form = UserForm()
         return render(request,'homma/signup.html',{'form':form})
+
