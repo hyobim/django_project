@@ -1,0 +1,51 @@
+form{
+    width: 645px;
+    height: 655px;
+    border-radius: 30px;
+    border: solid 1px #707070;
+    background-color: #ffffff;
+    margin-left: 30%;
+}
+
+h1{
+    width: 400px;
+    height: 63px;
+    font-family: JejuGothic;
+    font-size: 30px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+    text-align: center;
+    color: #707070;
+    margin-left: 38%;
+    margin-top: 3%;
+    border-left: 20%;
+    
+}
+
+input{
+    width: 501px;
+    height: 66px;
+    border-radius: 22px;
+    border: solid 1px #707070;
+    background-color: #ffffff;
+    margin-top: 15%;
+    margin-left: 2%;
+    
+
+}
+
+#one{
+    width: 244px;
+    height: 62px;
+    border-radius: 21px;
+    background-color: #fb6365;
+    margin-left: 30%;
+    
+}
+
+p{
+    margin-left: 5%;
+}

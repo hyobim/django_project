@@ -19,3 +19,6 @@ class UserForm(forms.ModelForm):
     class Meta:
         model = CustomUser
         fields = ['username','email','password','nickname','phone_number']
+        help_texts = {
+            'username': None,
+        }

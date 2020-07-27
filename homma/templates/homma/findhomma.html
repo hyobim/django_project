@@ -1,23 +1,44 @@
+{% extends 'homma/base.html' %}
 {% block content %}
-{% load static %}
 
-{% for post in posts.all %}
+
+{% load static %}
+<style>
+  @font-face {
+    font-family: 'IBMPlexSansKR-Text';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Text.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+  }
+
+  h2,
+  p {
+    font-family: 'IBMPlexSansKR-Text';
+  }
+</style>
+
 <section>
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-6 order-lg-2">
-          <div class="p-5">
-            {% if post.image %}
-            <img class="img-fluid rounded-circle" src="{{ post.image.url }}" alt="">
-            {% endif %}
-          </div>
+  <div class="container" style="margin: 0 auto;">
+    <div style=" display: grid;grid-template-columns: repeat(3, minmax(0, 1fr));">
+
+      {% for post in posts.all %}
+      <div style="text-align:center;">
+        <div class="p-5">
+          <br>
+          {% if post.image %}
+          <img class="img-fluid rounded-circle" src="{{ post.image.url }}" alt=""
+            style="height: 226px; margin: 0 auto;">
+          {% endif %}
         </div>
-            <h2 >{{post.title}}</h2>
-            <p>{{post.content}}</p>
-          
+        <h2>{{post.title}}</h2>
+        <p>{{post.content}}</p>
       </div>
+
+      {% endfor %}
     </div>
-  </section>
-{% endfor %}
+  </div>
+</section>
+
 
 {% endblock %}

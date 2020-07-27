@@ -1,8 +1,32 @@
-<h1>로그인하기</h1>
+<!DOCTYPE html>
+{% extends 'homma/base.html' %}
+{% block content %}<br><br>
+<html lang="en">
+<head>
+  <style>
+    @font-face {
+      font-family: 'IBMPlexSansKR-Text';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Text.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'homma/css/signin.css' %}">
+</head>
 
-<form method="POST" action="/signin">
+<body>
+  <h1>로그인하기</h1>
+
+<form method="POST" action="/signin" style="font-family: 'IBMPlexSansKR-Text;'">
     {% csrf_token %}
-    {{ signin_form.as_p}}
-    <input type="submit" value="submit">
+    {{ signin_form.as_p }}
+    <input id="one" type="submit" value="로그인">
     <br><br>
   </form>
+</body>
+</html>
+{% endblock %}

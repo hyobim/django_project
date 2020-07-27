@@ -21,7 +21,7 @@ def create(request):
         if form.is_valid():
             form = form.save(commit=False)
             form.save()
-            return redirect('main')
+            return redirect('findhomma')
     else:
         form = PostForm()
         return render(request, 'homma/create.html', {'form': form})
@@ -43,7 +43,7 @@ def update(request, pk):
         if form.is_valid():
             form = form.save(commit=False)
             form.save()
-            return redirect('main')
+            return redirect('findhomma')
     else:
         form = PostForm(instance=post)
         return render(request,'homma/create.html',{'form':form})
@@ -52,7 +52,7 @@ def update(request, pk):
 def delete(request, pk):
     post = get_object_or_404(Post,pk=pk)
     post.delete()
-    return redirect('main')
+    return redirect('findhomma')
 
 def signin(request):
     if request.method == 'POST':

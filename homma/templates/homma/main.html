@@ -1,20 +1,21 @@
-<div
-    style="width: 100vw; height: 50px; display: flex; align-items: center; justify-content: space-between; background-color: white;">
-    <img src="https:/tmddus9904.github.io/idol.png" width="100px" style="top: 50%;">
-    <span style="">
-        <span style="margin-right: 60px; "><a href="{% url 'findhomma'%}"> 홈마찾기</a> </span>
-        <span style="margin-right: 60px; ">신청하기</span>
-        
-        <span style="margin-right: 60px; ">
-            {% if user.is_authenticated %}
-        <span style="margin-right: 60px; "><a href="{% url 'myprofile'%}">내 프로필</a></span>
-        <a href="{% url 'logout' %}">sign out</a>
-        {% else %}
-        <span style="margin-right: 60px; "><a href="{% url 'signin'%}">로그인</a></span>
-        <span style="margin-right: 60px; ">
-            <a href="{% url 'signup'%}">회원가입</a></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        
-        {% endif %}
-    </span>
-    
-</div>
+{% extends 'homma/base.html' %}
+
+{% block content %}
+
+<br>
+<br>
+<br>
+<br>
+
+
+<img src="https://raw.githubusercontent.com/tmddus9904/tmddus9904.github.io/master/head.jpg" width="1270px"
+    style="top: 100%;">
+<br>
+<br>
+<br>
+<br>
+
+<img src="https://raw.githubusercontent.com/tmddus9904/tmddus9904.github.io/master/button%204%E2%80%93%201.png"
+    width="200px" style="display: block; margin: 0px auto;">
+
+{% endblock %}

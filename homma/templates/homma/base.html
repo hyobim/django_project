@@ -1,38 +1,70 @@
-{% block content %}
-<style>
-    @font-face {
-        font-family: 'JejuGothic';
-        src: url('https://likelion_2/JejuGothic.woff') format('woff');
-        font-weight:
-            normal;
-        font-style: normal;
-    }
+{% load static %}
 
-    .header {
-        width: 129px;
-        height: 22px;
-        font-family: 'JejuGothic';
-        font-size: 30px;
-        font-weight: normal;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: 1.2;
-        letter-spacing: normal;
-        text-align: left;
-        color: #707070;
-    }
-</style>
 
-<div
-    style="width: 100vw; height: 50px; display: flex; align-items: center; justify-content: space-between; background-color: white;">
-    <img src="https://likelion_2/idol.png" width="100px" style="top: 50%;">
-    <span class="header">
-        <span style="margin-right: 60px; "><a href="{% url 'findhomma'%}"> 홈마찾기</a> </span>
-        <span style="margin-right: 60px; ">신청하기</span>
-        <span style="margin-right: 60px; "><a href="{% url 'create'%}"></a>로그인</span>
-        <span style="margin-right: 60px; "><a
-                href="{% url 'signup'%}"></a>회원가입</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <span style="margin-right: 60px; ">신청하기</span>
-    </span>
-</div>
-{% endblock %}
+<head>
+    <link rel="stylesheet" href="{% static 'mycss.css' %}" />
+    <style>
+        @font-face {
+            font-family: 'IBMPlexSansKR-Text';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Text.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        #help {
+            width: 129px;
+            height: 22px;
+            font-family: 'IBMPlexSansKR-Text';
+            font-size: 18px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.2;
+            letter-spacing: normal;
+            text-align: left;
+            color: #707070;
+        }
+
+        a:link {
+            color: black;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: #FF6161;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #FF6161;
+            text-decoration: underline;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div style="width: 100vw; height: 50px; display: flex; align-items: center; justify-content: space-between; background-color: white; margin-top: 20px;"
+        id="help">
+        <a href="{% url 'main' %}"><img src="https://raw.githubusercontent.com/tmddus9904/tmddus9904.github.io/master/idol.png" width="100px"
+            style="top: 50%; margin-left: 20px; margin-top:15px;"></a>
+        <span class=" headers">
+            <span style="margin-right: 60px;"><a href="{% url 'findhomma'%}"> 홈마찾기</a> </span>
+            {% if user.is_authenticated %}
+            <!-- <span style="margin-right: 60px;"><a href="{% url 'create'%}">신청하기</a></span> -->
+            <span style="margin-right: 60px;"><a href="{% url 'application'%}">신청하기</a></span>
+            <span style="margin-right: 60px;"><a href="{% url 'logout' %}">{{user.nickname}}님 &nbsp; 로그아웃</a></span>
+            
+            {% else %}
+            <span style="margin-right: 60px;"><a href="{% url 'signin'%}">로그인</a></span>
+            <span style="margin-right: 60px;"><a href="{% url 'signup'%}">회원가입</a>
+            {% endif %}
+                </span>
+        </span>
+    </div>
+
+    {% block content %}
+    {% endblock %}
+
+</body>

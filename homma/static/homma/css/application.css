@@ -1,0 +1,94 @@
+@font-face {
+    font-family: 'JejuGothic';
+    src: url('https://likelion_2/JejuGothic.woff') format('woff');
+    font-weight:
+        normal;
+    font-style: normal;
+}
+*{
+    text-align: center;
+
+}
+h1{
+    width: 148px;
+    height: 69px;
+    font-family: JejuGothic;
+    font-size: 30px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+    text-align:right;
+    color: #707070;
+  }
+  input {
+    width: 746px;
+    height: 60px;
+    border-radius: 20px;
+    border: solid 1px #707070;
+    background-color: #ffffff;
+  }
+ p {
+    width: 204px;
+    height: 35px;
+    font-family: SegoeUI;
+    font-size: 20px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.35;
+    letter-spacing: normal;
+    text-align: right;
+    color: #707070;
+  }
+  
+    input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+        border: solid 1px #707070;
+        background-color: #ffffff;
+      }
+     label {
+         
+        width: 114px;
+        height: 18px;
+        font-family: SegoeUI;
+        font-size: 20px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.35;
+        letter-spacing: normal;
+        text-align: center;
+        color: #707070;
+      }
+
+  #photo{
+    width: 977px;
+    height: 114px;
+    border: solid 1px #707070;
+    background-color: #ffffff;
+  }
+
+  #s{
+    width: 56px;
+    height: 20px;
+    font-family: JejuGothic;
+    font-size: 20px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+  }
+  #submit{
+    margin-top: 100px;
+    margin-left: 200px;
+  width: 244px;
+  height: 62px;
+  border-radius: 21px;
+  background-color: #fb6365;
+}

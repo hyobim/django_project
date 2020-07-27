@@ -1,53 +1,42 @@
+{% extends 'homma/base.html' %}
 
-
-<style>
-    .container {
-      width: 250px;
-      margin: 150px auto;
-    }
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="{% static 'homma/css/application.css' %}">
+</head>
+<body>
+  <div class="container">
     
-    </style>
-
-
-
-<div class="container">
-    
-    <form method ='post' action='' enctype="multipart/form-data">
+    <form method ='post' action="{% url 'main' %}" enctype="multipart/form-data">
         {% csrf_token %}
         <h1>보정신청</h1>
      
-        이름 <textarea cols =15 rows =1 name="name">{{submit.name}}</textarea>
+        <p>이름</p> <input type="text" name="name">{{submit.name}}
         <br>
-        연락처<textarea cols =20 rows =1 name="phone">{{submit.phone}}</textarea>
+        <p>연락처</p><input type="text" name="name">{{submit.phone}}
         <br>
-        이메일<textarea cols =20 rows =1 name="email">{{submit.phone}}</textarea>
+        <p>이메일</p><input type="text" name="name">{{submit.phone}}
         <br>
-        첨부파일<textarea cols =20 rows =1 name="photo">{{submit.photo}}></textarea>
+        <p>첨부파일</p><input type="text" name="name">{{submit.photo}}
         <br>
-        <p>원하는 스타일</p>
-        <p class="flex items-center">
-            <input type="checkbox" name="1" >
-            <label for="1" >
-              선명하게
-            </label>
-            <input type="checkbox" name="2">
-            <label for="2" >
-              뽀얗게
-            </label>
-            <br>
-            <input type="checkbox" name="3">
-            <label for="3" >
-              분위기있게
-            </label>
-            <input type="checkbox" name="4">
-            <label for="4" >
-              시크하게
-            </label>
-        </p>
+        
+        <p>원하는 스타일</p><input type="text" name="name">
         <p>추가 요청사항</p>
-        <div><textarea cols =30 rows =5 name="photo" >{{submit.context}}</textarea></div>
+        <div><textarea cols =30 rows =5 id="photo" >{{submit.context}}</textarea></div>
    
         <br>
-        <input type="submit" value="보내기">
+        <input type="submit" value="보내기" id='value'>
     </form>
 </div>
+
+</body>
+</html>
+
+
+{% endblock %}

@@ -1,3 +1,5 @@
+{% extends 'homma/base.html' %}
+{% block content %}<br><br>
 <h1>My Page</h1>
     <form action="POST">
         <label for="nickname">닉네임</label>
@@ -26,3 +28,4 @@
         <a href="{%url 'main'%}">home</a>
         
     </form> 
+    {% endblock %}
